@@ -5,3 +5,6 @@ import SectionHome  from '@/components/section/SectionHome.vue'
 <template>
   <SectionHome />
 </template>
+
+<style scoped>
+</style>
