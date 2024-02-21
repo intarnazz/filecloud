@@ -3,8 +3,8 @@ import {} from 'vue-router'
 import {} from 'vue'
 import { FileAdd } from '@/api/api.js'
 
-async function filePost(token) {
-  const res = await FileAdd()
+async function filePost() {
+  const res = await FileAdd(token)
 }
 </script>
 
