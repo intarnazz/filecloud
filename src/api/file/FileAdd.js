@@ -1,18 +1,12 @@
 const API_URL = import.meta.env.VITE_API_URL
 
-export async function UserReg(files) {
-  console.log(API_URL);
-  return await fetch(`${API_URL}api/registration`, {
+export async function FileAdd(files) {
+  const formData = new FormData()
+  formData.append('file', files)
+
+  return await fetch(`${API_URL}api/files`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'Application/json'
-    },
-    body: JSON.stringify({
-      first_name: first_name,
-      last_name: last_name,
-      email: email,
-      password: password
-    })
+    body: formData
   })
     .then((response) => response.json())
     .then((json) => {
