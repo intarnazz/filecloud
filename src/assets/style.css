@@ -122,3 +122,9 @@ input:active {
   right: 20px;
   background-color: hsl(0, 0%, 50%);
 }
+
+@media screen and ( max-width: 1280px) {
+  .wrapper {
+    width: 100%;
+  }
+}
