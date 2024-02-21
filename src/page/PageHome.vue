@@ -1,10 +1,11 @@
 <script setup>
-import SectionHome  from '@/components/section/SectionHome.vue'
+import SectionHome from '@/components/section/SectionHome.vue'
+
+const props = defineProps(['token'])
 </script>
 
 <template>
-  <SectionHome />
+  <SectionHome :token="props.token" />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

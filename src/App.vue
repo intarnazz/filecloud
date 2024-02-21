@@ -142,7 +142,7 @@ watch(regIsOpen.value, clearErrorArr)
     <div @click="loginIs" class="exit">X</div>
   </div>
 
-  <RouterView class="content" />
+  <RouterView class="content" :token />
   <footer class="footer"></footer>
 </template>
 
