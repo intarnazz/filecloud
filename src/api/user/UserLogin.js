@@ -4,7 +4,8 @@ export async function UserLogin(email, password) {
   return await fetch(`${API_URL}api/authorization`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'Application/json'
+      'Content-Type': 'Application/json',
+      Accept: 'application/json'
     },
     body: JSON.stringify({
       email: email,

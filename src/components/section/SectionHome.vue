@@ -13,7 +13,7 @@ function fileAddInArr() {
 }
 
 async function filePush() {
-  const res = await FileAdd(props.token, files.value)
+  await FileAdd(props.token, files.value)
 }
 </script>
 
