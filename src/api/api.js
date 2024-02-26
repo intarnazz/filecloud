@@ -7,8 +7,5 @@ export const UserReg = UserRegModel.UserReg
 import * as UserLogoutModel from './user/UserLogout.js'
 export const UserLogout = UserLogoutModel.UserLogout
 
-import * as UserGetModel from './user/UserGet.js'
-export const UserGet = UserGetModel.UserGet
-
 import * as FileAddModel from './file/FileAdd.js'
 export const FileAdd = FileAddModel.FileAdd
