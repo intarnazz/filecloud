@@ -3,7 +3,7 @@ import {} from 'vue-router'
 import { ref } from 'vue'
 import { FileAdd } from '@/api/api.js'
 
-const props = defineProps(['token'])
+// const props = defineProps(['token'])
 const file = ref()
 const files = ref([])
 
@@ -13,7 +13,8 @@ function fileAddInArr() {
 }
 
 async function filePush() {
-  await FileAdd(props.token, files.value)
+  const token = localStorage.getItem('token')
+  await FileAdd(token, files.value)
 }
 </script>
 

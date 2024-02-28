@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import { ref, onMounted, watch } from 'vue'
-import { UserReg, UserLogin, UserGet, UserLogout } from '@/api/api.js'
+import { UserReg, UserLogin, UserLogout } from '@/api/api.js'
 
 const regIsOpen = ref(false)
 const loginIsOpen = ref(false)
@@ -13,18 +13,7 @@ const errorArr = ref([])
 const token = ref(null)
 const user = ref({})
 
-async function getUser() {
-  token.value = localStorage.getItem('token')
-  if (token.value) {
-    const res = await UserGet(token.value)
-    user.value = res.user
-  } else {
-    user.value = null
-  }
-}
-
 onMounted(async () => {
-  await getUser()
 })
 
 async function registration() {
@@ -42,7 +31,6 @@ async function authorization() {
   if (res.success) {
     localStorage.setItem('token', res.token)
     loginIsOpen.value = false
-    await getUser()
   } else {
     errorArr.value = res.message
   }
