@@ -7,7 +7,7 @@ export async function FileAdd(token, files) {
     formData.append(`file${key}`, file)
   })
 
-  return await fetch(`${API_URL}api/files`, {
+  return await fetch(`${API_URL}files`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`

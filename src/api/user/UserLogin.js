@@ -1,7 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL
 
 export async function UserLogin(email, password) {
-  return await fetch(`${API_URL}api/authorization`, {
+  return await fetch(`${API_URL}authorization`, {
     method: 'POST',
     headers: {
       'Content-Type': 'Application/json',
