@@ -5,7 +5,6 @@ export async function UserLogin(email, password) {
     method: 'POST',
     headers: {
       'Content-Type': 'Application/json',
-      Accept: 'application/json'
     },
     body: JSON.stringify({
       email: email,

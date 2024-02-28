@@ -6,7 +6,6 @@ export async function UserReg(first_name, last_name, email, password) {
     method: 'POST',
     headers: {
       'Content-Type': 'Application/json',
-      Accept: 'application/json'
     },
     body: JSON.stringify({
       first_name: first_name,
