@@ -57,6 +57,7 @@ ul {
 button {
   border: none;
   outline: none;
+  background: none;
 }
 button:active {
   outline: none;
@@ -98,6 +99,7 @@ input:active {
   padding: 1em;
   background-color: hsl(0, 0%, 9%);
   border-radius: 10px;
+  transition: .1s;
 }
 
 
@@ -121,6 +123,13 @@ input:active {
   top: 20px;
   right: 20px;
   background-color: hsl(0, 0%, 50%);
+}
+.cursor {
+  cursor: pointer;
+}
+
+.scale {
+  transform: scale(0);
 }
 
 @media screen and ( max-width: 1280px) {

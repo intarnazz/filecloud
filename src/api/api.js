@@ -9,3 +9,15 @@ export const UserLogout = UserLogoutModel.UserLogout
 
 import * as FileAddModel from './file/FileAdd.js'
 export const FileAdd = FileAddModel.FileAdd
+
+import * as FileDiskModel from './file/FileDisk.js'
+export const FileDisk = FileDiskModel.FileDisk
+
+import * as FileChangeModel from './file/FileChange.js'
+export const FileChange = FileChangeModel.FileChange
+
+import * as FileDeleteModel from './file/FileDelete.js'
+export const FileDelete = FileDeleteModel.FileDelete
+
+import * as FileDownLoadModel from './file/FileDownLoad.js'
+export const FileDownLoad = FileDownLoadModel.FileDownLoad
