@@ -105,6 +105,8 @@ watch(() => regIsOpen.value, clearErrorArr)
     </div>
   </header>
 
+  <div class="alert err">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+
   <div v-if="regIsOpen" class="popup">
     <form :class="{ scale: !popupScale }" @submit.prevent="registration" class="boxY">
       <div class="boxX">

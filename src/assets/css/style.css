@@ -112,10 +112,12 @@ input:active {
 
 .err {
   color: hsl(0, 100%, 75%);
+  background-color: hsl(0, 100%, 5%);
 }
 
 .ok {
   color: hsl(118, 100%, 75%);
+  background-color: hsl(118, 100%, 75%);
 }
 
 .exit {
@@ -137,6 +139,14 @@ input:active {
 
 .scale {
   transform: scale(0);
+}
+
+.alert {
+  position: absolute;
+  padding: .5em 1em;
+  top: 50px;
+  border-radius: 30px;
+  display: flex;
 }
 
 @media screen and (max-width: 1280px) {

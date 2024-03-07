@@ -19,6 +19,7 @@ const fileChangeKey = ref(null)
 const fileNewName = ref('')
 const accessIsOpen = ref(null)
 const coAitorEmail = ref('')
+const errorAddAccess = ref(false)
 
 async function init() {
   files.value = await FileDisk(props.token)
@@ -87,6 +88,9 @@ async function accessOpenEvent(key) {
 
 async function addAccess(key) {
   const res = await AccessAdd(props.token, key, coAitorEmail.value)
+  if (!res.success) {
+    errorAddAccess.value = res.message.email[0]
+  }
   init()
 }
 
