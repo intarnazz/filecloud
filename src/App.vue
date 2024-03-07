@@ -82,6 +82,14 @@ watch(regIsOpen.value, clearErrorArr)
   <header class="header">
     <div class="wrapper boxX">
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="50" height="50" />
+      <nav>
+        <ul>
+          <li>
+            <RouterLink :to="{ name: 'Home' }">Мои файлы</RouterLink> |
+            <RouterLink :to="{ name: 'Shared' }">Файлы к которым есть достутуп</RouterLink>
+          </li>
+        </ul>
+      </nav>
       <div v-if="!token" class="boxX">
         <button @click="loginIs" class="button">Войти</button>
         <button @click="regIs" class="button">Регистрация</button>

@@ -14,6 +14,7 @@ body {
   margin: 0;
 }
 
+
 #app {
   min-height: 100dvh;
   font-weight: normal;
@@ -37,6 +38,7 @@ ul {
   list-style: none;
 }
 
+
 .boxX {
   display: flex;
   flex-direction: row;
@@ -52,15 +54,13 @@ ul {
   gap: 1em;
 }
 
-a {
-  color: hsla(160, 100%, 37%, 1);
-  text-decoration: none;
+.boxDefaut {
+  align-items: flex-start;
 }
 
 button {
   border: none;
   outline: none;
-  background: none;
 }
 button:active {
   outline: none;
@@ -69,9 +69,9 @@ input {
   border: none;
   outline: none;
   border-radius: 5px;
-  padding: 0.5em 1em;
+  padding: .5em 1em;
   border-radius: 5px;
-  border: 1px solid hsla(160, 100%, 37%, 1);
+  border: 1px solid hsl(184, 100%, 37%);
   background-color: hsla(160, 0%, 0%, 0);
   color: #fff;
 }
@@ -79,10 +79,10 @@ input:active {
   outline: none;
 }
 .button {
-  padding: 0.5em 1em;
+  padding: .5em 1em;
   border-radius: 5px;
   border: 1px solid hsla(160, 100%, 37%, 1);
-  background-color: hsla(160, 100%, 50%, 0.1);
+  background-color: hsla(160, 100%, 50%, .1);
   color: #fff;
   cursor: pointer;
 }
@@ -92,7 +92,7 @@ input:active {
   left: 0;
   width: 100%;
   height: 100dvh;
-  background-color: hsla(160, 0%, 0%, 0.5);
+  background-color: hsla(160, 0%, 0%, .5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,8 +102,8 @@ input:active {
   padding: 1em;
   background-color: hsl(0, 0%, 9%);
   border-radius: 10px;
-  transition: 0.1s;
 }
+
 
 .err {
   color: hsl(0, 100%, 75%);
@@ -116,7 +116,7 @@ input:active {
 .exit {
   width: 50px;
   height: 50px;
-  border-radius: 50px;
+  border-radius:50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,15 +126,8 @@ input:active {
   right: 20px;
   background-color: hsl(0, 0%, 50%);
 }
-.cursor {
-  cursor: pointer;
-}
 
-.scale {
-  transform: scale(0);
-}
-
-@media screen and (max-width: 1280px) {
+@media screen and ( max-width: 1280px) {
   .wrapper {
     width: 100%;
   }

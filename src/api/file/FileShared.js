@@ -1,11 +1,10 @@
 const API_URL = import.meta.env.VITE_API_URL
 
-export async function FileDelete(token, key) {
-  return await fetch(`${API_URL}files/${key}`, {
-    method: 'DELETE',
+export async function FileShared(token) {
+  return await fetch(`${API_URL}shared`, {
+    method: 'GET',
     headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'Application/json'
+      Authorization: `Bearer ${token}`
     }
   })
     .then((response) => response.json())

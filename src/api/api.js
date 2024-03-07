@@ -21,3 +21,12 @@ export const FileDelete = FileDeleteModel.FileDelete
 
 import * as FileDownLoadModel from './file/FileDownLoad.js'
 export const FileDownLoad = FileDownLoadModel.FileDownLoad
+
+import * as AccessAddModel from './access/AccessAdd.js'
+export const AccessAdd = AccessAddModel.AccessAdd
+
+import * as AccessDeleteModel from './access/AccessDelete.js'
+export const AccessDelete = AccessDeleteModel.AccessDelete
+
+import * as FileSharedModel from './file/FileShared.js'
+export const FileShared = FileSharedModel.FileShared
