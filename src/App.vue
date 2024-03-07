@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, watch, computed } from 'vue'
 import { UserReg, UserLogin, UserLogout } from '@/api/api.js'
 
 const regIsOpen = ref(false)
@@ -71,11 +71,16 @@ async function logout() {
 }
 
 function clearErrorArr() {
-  errorArr.value = []
+  console.log('clearErrorArr')
+  errorArr.value = null
 }
 
-watch(loginIsOpen.value, clearErrorArr)
-watch(regIsOpen.value, clearErrorArr)
+const errorArrType = computed(() => {
+  return typeof errorArr.value == typeof '' ? true : false
+})
+
+watch(() => loginIsOpen.value, clearErrorArr)
+watch(() => regIsOpen.value, clearErrorArr)
 </script>
 
 <template>
@@ -119,9 +124,14 @@ watch(regIsOpen.value, clearErrorArr)
         ><input v-model="password" id="password" name="password" type="password" />
       </div>
       <div class="boxY">
-        <ul>
-          <li class="err" v-for="(value, key) in errorArr" :key="key">* {{ value }}</li>
+        <ul v-if="!errorArrType">
+          <li class="err" v-for="(valueArr, key) in errorArr" :key="key">
+            <ul>
+              <li class="err" v-for="(value, key) in valueArr" :key="key">* {{ value }}</li>
+            </ul>
+          </li>
         </ul>
+        <div v-else class="err">{{ errorArr }}</div>
       </div>
       <input class="button" value="Зарегистрироваться" type="submit" />
     </form>
@@ -139,9 +149,14 @@ watch(regIsOpen.value, clearErrorArr)
         ><input v-model="password" id="log-password" name="password" type="password" />
       </div>
       <div class="boxY">
-        <ul>
-          <li class="err" v-for="(value, key) in errorArr" :key="key">* {{ value }}</li>
+        <ul v-if="!errorArrType">
+          <li class="err" v-for="(valueArr, key) in errorArr" :key="key">
+            <ul>
+              <li class="err" v-for="(value, key) in valueArr" :key="key">* {{ value }}</li>
+            </ul>
+          </li>
         </ul>
+        <div v-else class="err">{{ errorArr }}</div>
       </div>
       <input class="button" value="Войти" type="submit" />
     </form>

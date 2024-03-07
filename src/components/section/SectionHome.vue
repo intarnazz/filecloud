@@ -86,7 +86,7 @@ async function accessOpenEvent(key) {
 }
 
 async function addAccess(key) {
-  await AccessAdd(props.token, key, coAitorEmail.value)
+  const res = await AccessAdd(props.token, key, coAitorEmail.value)
   init()
 }
 
@@ -130,7 +130,7 @@ watch(() => props.token, init)
                     </span>
                   </button>
                   <button class="cursor" @click="accessOpenEvent(value.file_id)">
-                    <span class="material-symbols-outlined"> person_add </span>
+                    <span class="material-symbols-outlined"> group </span>
                   </button>
                   <button class="cursor" @click="fileChangeEvent(value.file_id, value.name)">
                     <span style="color: hsla(184, 60%, 45%, 1)" class="material-symbols-outlined">
@@ -169,11 +169,14 @@ watch(() => props.token, init)
                 </ul>
                 <div class="boxX">
                   <div class="boxX">
-                    Email: <input v-model="coAitorEmail" type="text" />
-                    <button @click="addAccess(value.file_id)" class="button boxX">
-                      <span class="material-symbols-outlined"> person_add </span>
-                      Добавить пользователя
-                    </button>
+                    Email:
+                    <div class="boxX box-defaut">
+                      <input v-model="coAitorEmail" type="text" />
+                      <button @click="addAccess(value.file_id)" class="button boxX">
+                        <span class="material-symbols-outlined"> person_add </span>
+                        Добавить пользователя
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -243,7 +246,7 @@ li
   background-color: rgba(255,255 ,255 ,.1)
   padding: .5em 1em
   border-radius: 10px
-  transition: .8s
+  transition: .4s
   overflow: hidden
 
 .displayNone

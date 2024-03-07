@@ -52,6 +52,11 @@ ul {
   gap: 1em;
 }
 
+.box-defaut {
+  align-items: stretch;
+  justify-content: stretch;
+}
+
 a {
   color: hsla(160, 100%, 37%, 1);
   text-decoration: none;

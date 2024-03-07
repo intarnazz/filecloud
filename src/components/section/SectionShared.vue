@@ -61,7 +61,7 @@ watch(() => props.token, init)
     <div class="wrapper flex1 boxY">
       <div class="">
         <div class="boxY">
-          <ul v-if="files.message !== 'Login failed'" class="boxY">
+          <ul v-if="(files.message !== 'Login failed') && files != false" class="boxY">
             <li class="boxY shared__item" v-for="(value, key) in files" :key="key">
               <div class="boxX">
                 <div v-if="fileChangeKey !== value.file_id" class="boxX">
@@ -92,6 +92,7 @@ watch(() => props.token, init)
               </div>
             </li>
           </ul>
+          <h2 v-else>файлов нет</h2>
         </div>
       </div>
     </div>
